@@ -21,7 +21,7 @@ repository               : "karm235/karm235.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "illusive.png"
   name             : "karm"
   pronouns         : # example: "she/her"  
   bio              : "Digital artwork and bullshit enjoyer"
