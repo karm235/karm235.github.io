@@ -22,7 +22,6 @@ Interests
   - __Garry's Mod (former):__ Decided to move on to Blender, but gmod is a good starting platform for things like this.
   - __DCS World:__ The graphics for a sim like this are great and allow for some stunning images.
   - __No AI!__ Pick up a pencil or a game/digital program and learn.
- * __Worldbuilding:__ I tend to do plenty of worldbuilding in my past time, coming up with an alternate reality where Earth is eventually abandoned.
 
 Most of my work can be found in my [portfolio](https://karm235.github.io/portfolio/).
 
