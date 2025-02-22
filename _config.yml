@@ -21,7 +21,7 @@
 title: karm235
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  karm235: certainly the website of all time
+  karm235: certainly a website of all time
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://karm235.org" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
