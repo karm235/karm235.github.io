@@ -1,0 +1,259 @@
+---
+layout: default
+title: Socials
+permalink: /socials/
+---
+<section class="socials-section">
+    <h2><i class="fas fa-globe"></i> Connect With Me</h2>
+    <p class="section-intro">Find me across the internet on these platforms.</p>
+    
+    <div class="social-grid">
+        <!-- Add your actual social links here -->
+        <a href="https://github.com/YourUsername" class="social-card github">
+            <div class="social-icon">
+                <i class="fab fa-github"></i>
+            </div>
+            <div class="social-details">
+                <h3>GitHub</h3>
+                <p>Check out my code repositories</p>
+                <span class="social-handle">@YourUsername</span>
+            </div>
+        </a>
+        
+        <a href="https://twitter.com/YourUsername" class="social-card twitter">
+            <div class="social-icon">
+                <i class="fab fa-twitter"></i>
+            </div>
+            <div class="social-details">
+                <h3>Twitter</h3>
+                <p>Follow me for updates</p>
+                <span class="social-handle">@YourUsername</span>
+            </div>
+        </a>
+        
+        <a href="https://www.linkedin.com/in/YourUsername" class="social-card linkedin">
+            <div class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+            <div class="social-details">
+                <h3>LinkedIn</h3>
+                <p>Connect professionally</p>
+                <span class="social-handle">YourName</span>
+            </div>
+        </a>
+        
+        <a href="#" class="social-card discord">
+            <div class="social-icon">
+                <i class="fab fa-discord"></i>
+            </div>
+            <div class="social-details">
+                <h3>Discord</h3>
+                <p>Chat with me</p>
+                <span class="social-handle">YourUsername#0000</span>
+            </div>
+        </a>
+        
+        <!-- Add more social platforms as needed -->
+    </div>
+    
+    <div class="contact-form-container">
+        <h3><i class="fas fa-envelope"></i> Contact Me Directly</h3>
+        <p>Send me a message using the form below:</p>
+        
+        <form class="contact-form" action="https://formspree.io/f/your-formspree-id" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<style>
+    .socials-section {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .section-intro {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        color: #555;
+    }
+    
+    .social-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    
+    .social-card {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        color: var(--text-color);
+        text-decoration: none;
+    }
+    
+    .social-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .social-icon {
+        font-size: 2rem;
+        margin-right: 1.5rem;
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+    
+    .github .social-icon {
+        background-color: #24292e;
+        color: white;
+    }
+    
+    .twitter .social-icon {
+        background-color: #1da1f2;
+        color: white;
+    }
+    
+    .linkedin .social-icon {
+        background-color: #0077b5;
+        color: white;
+    }
+    
+    .discord .social-icon {
+        background-color: #7289da;
+        color: white;
+    }
+    
+    .social-details h3 {
+        margin: 0 0 0.3rem 0;
+        font-size: 1.2rem;
+    }
+    
+    .social-details p {
+        margin: 0 0 0.5rem 0;
+        font-size: 0.9rem;
+        color: #555;
+    }
+    
+    .social-handle {
+        display: block;
+        font-size: 0.8rem;
+        color: var(--secondary-color);
+        font-weight: 600;
+    }
+    
+    /* Contact Form Styles */
+    .contact-form-container {
+        background-color: white;
+        border-radius: 8px;
+        padding: 2rem;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-form-container h3 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .contact-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .form-group:nth-child(3),
+    .form-group:nth-child(4) {
+        grid-column: span 2;
+    }
+    
+    label {
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: var(--primary-color);
+    }
+    
+    input, textarea {
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: inherit;
+        transition: border-color 0.3s ease;
+    }
+    
+    input:focus, textarea:focus {
+        outline: none;
+        border-color: var(--secondary-color);
+        box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    }
+    
+    .submit-btn {
+        grid-column: span 2;
+        background-color: var(--secondary-color);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .submit-btn:hover {
+        background-color: #2980b9;
+    }
+    
+    @media (max-width: 768px) {
+        .social-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .contact-form {
+            grid-template-columns: 1fr;
+        }
+        
+        .form-group:nth-child(3),
+        .form-group:nth-child(4) {
+            grid-column: span 1;
+        }
+        
+        .submit-btn {
+            grid-column: span 1;
+        }
+    }
+</style>

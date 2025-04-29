@@ -3,32 +3,225 @@ layout: default
 title: Resume
 permalink: /resume/
 ---
-<section>
-    <h2>Pseudo-Resume</h2>
+<section class="resume-section">
+    <h2><i class="fas fa-file-alt"></i> Pseudo-Resume</h2>
+    <p class="section-intro">A showcase of my technical skills and proficiencies.</p>
 
-    <h3>Code and Scripting</h3>
-    <ul>
-        <li><strong>Coding Languages:</strong></li>
-        <ul>
-            <li>C# (Intermediate)</li>
-            <li>C++ (Intermediate)</li>
-            <li>Holy C (Beginner)</li>
-            <li>Lua (Intermediate)</li>
-            <li>Python (Intermediate)</li>
-        </ul>
-        <li><strong>Scripting Languages:</strong></li>
-        <ul>
-            <li>PowerShell (Proficient)</li> 
-        </ul>
-        <li><strong>Markdown Languages:</strong></li>
-        <ul>
-            <li>XML</li>
-            <li>HTML</li>
-        </ul>
-    </ul>
-
-    <h3>Software</h3>
-    <ul>
-        <li><strong>Work in Progress</strong></li>
-    </ul>
+    <div class="skills-container">
+        <div class="skill-category">
+            <h3><i class="fas fa-code"></i> Programming Languages</h3>
+            <div class="skill-grid">
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <h4>C#</h4>
+                        <div class="skill-level">
+                            <div class="skill-progress intermediate"></div>
+                        </div>
+                    </div>
+                    <span class="skill-tag">Intermediate</span>
+                    <p>Object-oriented programming for Windows applications and game development.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <h4>C++</h4>
+                        <div class="skill-level">
+                            <div class="skill-progress intermediate"></div>
+                        </div>
+                    </div>
+                    <span class="skill-tag">Intermediate</span>
+                    <p>System programming and performance-critical applications.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <h4>Holy C</h4>
+                        <div class="skill-level">
+                            <div class="skill-progress beginner"></div>
+                        </div>
+                    </div>
+                    <span class="skill-tag">Beginner</span>
+                    <p>Experimental programming language knowledge.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <h4>Lua</h4>
+                        <div class="skill-level">
+                            <div class="skill-progress intermediate"></div>
+                        </div>
+                    </div>
+                    <span class="skill-tag">Intermediate</span>
+                    <p>Scripting for game modification and embedded systems.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <h4>Python</h4>
+                        <div class="skill-level">
+                            <div class="skill-progress intermediate"></div>
+                        </div>
+                    </div>
+                    <span class="skill-tag">Intermediate</span>
+                    <p>Data analysis, automation, and general-purpose programming.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="skill-category">
+            <h3><i class="fas fa-terminal"></i> Scripting Languages</h3>
+            <div class="skill-grid">
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <h4>PowerShell</h4>
+                        <div class="skill-level">
+                            <div class="skill-progress proficient"></div>
+                        </div>
+                    </div>
+                    <span class="skill-tag">Proficient</span>
+                    <p>System administration, automation, and task scheduling.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="skill-category">
+            <h3><i class="fas fa-file-code"></i> Markup Languages</h3>
+            <div class="skill-grid">
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <h4>HTML</h4>
+                        <div class="skill-level">
+                            <div class="skill-progress intermediate"></div>
+                        </div>
+                    </div>
+                    <span class="skill-tag">Intermediate</span>
+                    <p>Web content structure and organization.</p>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <h4>XML</h4>
+                        <div class="skill-level">
+                            <div class="skill-progress intermediate"></div>
+                        </div>
+                    </div>
+                    <span class="skill-tag">Intermediate</span>
+                    <p>Data storage and configuration files.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="skill-category">
+            <h3><i class="fas fa-laptop-code"></i> Software</h3>
+            <div class="skill-card software-card">
+                <p><em>Work in Progress</em> - This section will be updated with software skills soon.</p>
+            </div>
+        </div>
+    </div>
 </section>
+
+<style>
+    .resume-section {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    .section-intro {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        color: #555;
+    }
+    
+    .skills-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+    
+    .skill-category h3 {
+        border-bottom: 2px solid var(--secondary-color);
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .skill-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1rem;
+    }
+    
+    .skill-card {
+        background-color: white;
+        border-radius: 8px;
+        padding: 1.25rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .skill-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .skill-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+    }
+    
+    .skill-header h4 {
+        margin: 0;
+        font-size: 1.2rem;
+    }
+    
+    .skill-level {
+        width: 100px;
+        height: 8px;
+        background-color: #e0e0e0;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    
+    .skill-progress {
+        height: 100%;
+        background-color: var(--secondary-color);
+    }
+    
+    .beginner { width: 30%; }
+    .intermediate { width: 60%; }
+    .proficient { width: 85%; }
+    
+    .skill-tag {
+        display: inline-block;
+        font-size: 0.75rem;
+        background-color: var(--light-bg);
+        color: var(--primary-color);
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        margin-bottom: 0.75rem;
+    }
+    
+    .skill-card p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #555;
+    }
+    
+    .software-card {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+    
+    @media (max-width: 768px) {
+        .skill-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .skill-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+    }
+</style>

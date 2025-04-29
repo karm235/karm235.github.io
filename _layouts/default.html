@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }}</title>
+  <title>{{ page.title }} | {{ site.title }}</title>
 
   <!-- Open Graph Meta Tags for Discord and others -->
   <meta property="og:type" content="website">
@@ -15,69 +15,298 @@
   <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="{{ site.title }}">
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
-      body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          background-color: #f4f4f4;
-          color: #333;
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+      --light-bg: #f8f9fa;
+      --dark-bg: #343a40;
+      --text-color: #333333;
+      --light-text: #f8f9fa;
+      --spacing-unit: 1rem;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--light-bg);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: var(--spacing-unit);
+      color: var(--primary-color);
+    }
+
+    a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--accent-color);
+    }
+
+    /* Header Styles */
+    header {
+      background-color: var(--primary-color);
+      color: var(--light-text);
+      padding: var(--spacing-unit) 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-unit);
+    }
+
+    .site-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .site-title a {
+      color: var(--light-text);
+    }
+
+    /* Navigation */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: var(--light-text);
+      font-weight: 600;
+      position: relative;
+    }
+
+    nav ul li a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--accent-color);
+      left: 0;
+      bottom: -5px;
+      transition: width 0.3s ease;
+    }
+
+    nav ul li a:hover:after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--light-text);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Main Content Styles */
+    main {
+      flex: 1;
+      padding: calc(var(--spacing-unit) * 2) 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-unit);
+    }
+
+    section {
+      margin-bottom: calc(var(--spacing-unit) * 2);
+      background-color: white;
+      border-radius: 8px;
+      padding: calc(var(--spacing-unit) * 2);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Lists */
+    ul {
+      padding-left: calc(var(--spacing-unit) * 1.5);
+      margin-bottom: var(--spacing-unit);
+    }
+
+    ul li {
+      margin-bottom: calc(var(--spacing-unit) * 0.5);
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: var(--dark-bg);
+      color: var(--light-text);
+      text-align: center;
+      padding: var(--spacing-unit);
+      margin-top: auto;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
       }
-      header {
-          background-color: #333;
-          color: #fff;
-          padding: 1rem 2rem;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        top: var(--spacing-unit);
+        right: var(--spacing-unit);
       }
+
+      nav {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+      }
+
+      nav.active {
+        max-height: 300px;
+      }
+
       nav ul {
-          list-style: none;
-          margin: 0;
-          padding: 0;
-          display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: var(--spacing-unit);
       }
+
       nav ul li {
-          margin: 0 1rem;
+        width: 100%;
       }
+
       nav ul li a {
-          color: #fff;
-          text-decoration: none;
-          font-weight: bold;
+        display: block;
+        padding: 0.5rem 0;
       }
-      .container {
-          padding: 2rem;
+
+      section {
+        padding: var(--spacing-unit);
       }
-      footer {
-          background-color: #333;
-          color: #fff;
-          text-align: center;
-          padding: 1rem 0;
-          position: fixed;
-          bottom: 0;
-          width: 100%;
-      }
+    }
+    
+    /* Specs & Equipment specific styles */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--spacing-unit);
+    }
+    
+    .specs-card {
+      background-color: rgba(52, 152, 219, 0.05);
+      border-radius: 8px;
+      padding: var(--spacing-unit);
+      border-left: 3px solid var(--secondary-color);
+    }
+    
+    /* Resume specific styles */
+    .skill-level {
+      display: inline-block;
+      height: 10px;
+      background-color: #e0e0e0;
+      border-radius: 5px;
+      overflow: hidden;
+      width: 100px;
+      margin-left: 10px;
+    }
+    
+    .skill-level div {
+      height: 100%;
+      background-color: var(--secondary-color);
+    }
+    
+    .beginner { width: 30%; }
+    .intermediate { width: 60%; }
+    .proficient { width: 85%; }
+    
+    /* Home page specific styles */
+    .welcome-section {
+      text-align: center;
+      padding: calc(var(--spacing-unit) * 3) var(--spacing-unit);
+    }
+    
+    .welcome-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: calc(var(--spacing-unit) * 1.5);
+    }
   </style>
 </head>
 <body>
   <header>
-      <h1>{{ site.title }}</h1>
-      <nav>
-          <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/work/">My Work</a></li>
-              <li><a href="/socials/">Socials</a></li>
-              <li><a href="/specsandequipment/">PC Specs and Equipment</a></li>
-              <li><a href="/resume/">Pseudo-Resume</a></li>
-          </ul>
+    <div class="header-container">
+      <h1 class="site-title"><a href="/">{{ site.title }}</a></h1>
+      <button class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav id="mainNav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/work/">My Work</a></li>
+          <li><a href="/socials/">Socials</a></li>
+          <li><a href="/specsandequipment/">PC Specs</a></li>
+          <li><a href="/resume/">Resume</a></li>
+        </ul>
       </nav>
+    </div>
   </header>
 
-  <div class="container">
+  <main>
+    <div class="container">
       {{ content }}
-  </div>
+    </div>
+  </main>
 
   <footer>
+    <div class="container">
       &copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.
+    </div>
   </footer>
+
+  <script>
+    // Mobile navigation toggle
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('mainNav').classList.toggle('active');
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const nav = document.getElementById('mainNav');
+      const toggle = document.getElementById('menuToggle');
+      
+      if (!nav.contains(event.target) && !toggle.contains(event.target) && nav.classList.contains('active')) {
+        nav.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>

@@ -1,0 +1,171 @@
+---
+layout: default
+title: My Work
+permalink: /work/
+---
+<section class="work-section">
+    <h2><i class="fas fa-laptop-code"></i> My Work</h2>
+    <p class="section-intro">A showcase of my projects and contributions.</p>
+    
+    <div class="work-grid">
+        <!-- Sample Project Card (Add your actual projects) -->
+        <div class="project-card">
+            <div class="project-image">
+                <img src="/api/placeholder/400/250" alt="Project 1 thumbnail">
+            </div>
+            <div class="project-details">
+                <span class="project-tag">Web Development</span>
+                <h3>Personal Website</h3>
+                <p>A responsive personal website built with Jekyll and hosted on GitHub Pages.</p>
+                <div class="project-tech">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Jekyll</span>
+                </div>
+                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> View Project</a>
+            </div>
+        </div>
+        
+        <!-- Add more project cards here -->
+        <div class="project-card">
+            <div class="project-image placeholder-image">
+                <i class="fas fa-code"></i>
+            </div>
+            <div class="project-details">
+                <span class="project-tag">Coming Soon</span>
+                <h3>Future Project</h3>
+                <p>Project details will be added here. This is a placeholder for future work.</p>
+                <div class="project-tech">
+                    <span>TBD</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image placeholder-image">
+                <i class="fas fa-code"></i>
+            </div>
+            <div class="project-details">
+                <span class="project-tag">Coming Soon</span>
+                <h3>Future Project</h3>
+                <p>Project details will be added here. This is a placeholder for future work.</p>
+                <div class="project-tech">
+                    <span>TBD</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .work-section {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .section-intro {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        color: #555;
+    }
+    
+    .work-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2rem;
+    }
+    
+    .project-card {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .project-image {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+    }
+    
+    .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    
+    .project-card:hover .project-image img {
+        transform: scale(1.05);
+    }
+    
+    .placeholder-image {
+        background-color: var(--secondary-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .placeholder-image i {
+        font-size: 4rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .project-details {
+        padding: 1.5rem;
+    }
+    
+    .project-tag {
+        display: inline-block;
+        font-size: 0.75rem;
+        background-color: var(--light-bg);
+        color: var(--primary-color);
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        margin-bottom: 0.75rem;
+    }
+    
+    .project-details h3 {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+        font-size: 1.3rem;
+    }
+    
+    .project-details p {
+        margin-bottom: 1rem;
+        color: #555;
+    }
+    
+    .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .project-tech span {
+        font-size: 0.8rem;
+        background-color: rgba(52, 152, 219, 0.1);
+        color: var(--secondary-color);
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+    }
+    
+    .project-link {
+        display: inline-block;
+        margin-top: 0.5rem;
+        font-weight: 600;
+    }
+    
+    @media (max-width: 768px) {
+        .work-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

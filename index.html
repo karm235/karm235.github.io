@@ -2,7 +2,64 @@
 layout: default
 title: Home
 ---
-<section>
-    <h2>Welcome</h2>
-    <p>Welcome to my personal website! Use the navigation bar to explore sections about my work, PC specifications, and a pseudo-resume. Stay tuned for updates!</p>
+<section class="welcome-section">
+    <h2>Welcome to my digital space</h2>
+    <p>Hi there! This is my personal corner of the internet where I share my work, skills, and the tech that powers my digital life.</p>
+    
+    <div class="quick-links">
+        <a href="/work/" class="quick-link-card">
+            <i class="fas fa-laptop-code"></i>
+            <h3>My Work</h3>
+            <p>Check out some of my recent projects</p>
+        </a>
+        <a href="/specsandequipment/" class="quick-link-card">
+            <i class="fas fa-desktop"></i>
+            <h3>Tech Specs</h3>
+            <p>The hardware that powers my computing</p>
+        </a>
+        <a href="/resume/" class="quick-link-card">
+            <i class="fas fa-file-alt"></i>
+            <h3>Skills</h3>
+            <p>My programming languages and expertise</p>
+        </a>
+    </div>
 </section>
+
+<style>
+    .quick-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .quick-link-card {
+        background-color: white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        color: var(--text-color);
+    }
+    
+    .quick-link-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .quick-link-card i {
+        font-size: 2.5rem;
+        color: var(--secondary-color);
+        margin-bottom: 1rem;
+    }
+    
+    .quick-link-card h3 {
+        margin-bottom: 0.5rem;
+    }
+    
+    .quick-link-card p {
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+</style>
