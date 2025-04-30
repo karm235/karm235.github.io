@@ -1,175 +1,312 @@
----
-layout: default
-title: My Work
-permalink: /work/
----
-<section class="work-section">
-    <h2><i class="fas fa-laptop-code"></i> My Work</h2>
-    <p class="section-intro">A showcase of my projects and contributions.</p>
-    
-    <div class="work-grid">
-        <!-- Sample Project Card (Add your actual projects) -->
-        <div class="project-card">
-            <div class="project-image github-project">
-                <i class="fas fa-globe"></i>
-            </div>
-            <div class="project-details">
-                <span class="project-tag">Web Development</span>
-                <h3>Personal Website</h3>
-                <p>A responsive personal website built with Jekyll and hosted on GitHub Pages.</p>
-                <div class="project-tech">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>Jekyll</span>
-                </div>
-                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> View Project</a>
-            </div>
-        </div>
-        
-        <!-- Add more project cards here -->
-        <div class="project-card">
-            <div class="project-image placeholder-image">
-                <i class="fas fa-code"></i>
-            </div>
-            <div class="project-details">
-                <span class="project-tag">Coming Soon</span>
-                <h3>Future Project</h3>
-                <p>Project details will be added here. This is a placeholder for future work.</p>
-                <div class="project-tech">
-                    <span>TBD</span>
-                </div>
-            </div>
-        </div>
-        
-        <div class="project-card">
-            <div class="project-image placeholder-image">
-                <i class="fas fa-code"></i>
-            </div>
-            <div class="project-details">
-                <span class="project-tag">Coming Soon</span>
-                <h3>Future Project</h3>
-                <p>Project details will be added here. This is a placeholder for future work.</p>
-                <div class="project-tech">
-                    <span>TBD</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} | {{ site.title }}</title>
 
-<style>
-    .work-section {
-        max-width: 1200px;
-        margin: 0 auto;
+  <!-- Open Graph Meta Tags for Discord and others -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}/assets/images/embed.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="{{ site.title }}">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+      --light-bg: #f8f9fa;
+      --dark-bg: #343a40;
+      --text-color: #333333;
+      --light-text: #f8f9fa;
+      --spacing-unit: 1rem;
     }
-    
-    .section-intro {
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-        color: #555;
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    
-    .work-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-        gap: 2rem;
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--light-bg);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
-    
-    .project-card {
-        background-color: white;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: var(--spacing-unit);
+      color: var(--primary-color);
     }
-    
-    .project-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+    a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
     }
-    
-    .project-image {
-        width: 100%;
-        height: 200px;
-        overflow: hidden;
+
+    a:hover {
+      color: var(--accent-color);
     }
-    
-    .project-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
+
+    /* Header Styles */
+    header {
+      background-color: var(--primary-color);
+      color: var(--light-text);
+      padding: var(--spacing-unit) 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
-    
-    .project-card:hover .project-image img {
-        transform: scale(1.05);
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-unit);
     }
-    
-    .placeholder-image, .github-project {
-        background-color: var(--secondary-color);
-        display: flex;
-        justify-content: center;
-        align-items: center;
+
+    .site-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0;
     }
-    
-    .github-project {
-        background-color: #3498db;
+
+    .site-title a {
+      color: var(--light-text);
     }
-    
-    .placeholder-image i, .github-project i {
-        font-size: 4rem;
-        color: rgba(255, 255, 255, 0.8);
+
+    /* Navigation */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
     }
-    
-    .project-details {
-        padding: 1.5rem;
+
+    nav ul li a {
+      color: var(--light-text);
+      font-weight: 600;
+      position: relative;
     }
-    
-    .project-tag {
-        display: inline-block;
-        font-size: 0.75rem;
-        background-color: var(--light-bg);
-        color: var(--primary-color);
-        padding: 0.25rem 0.5rem;
-        border-radius: 4px;
-        margin-bottom: 0.75rem;
+
+    nav ul li a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--accent-color);
+      left: 0;
+      bottom: -5px;
+      transition: width 0.3s ease;
     }
-    
-    .project-details h3 {
-        margin-top: 0;
-        margin-bottom: 0.75rem;
-        font-size: 1.3rem;
+
+    nav ul li a:hover:after {
+      width: 100%;
     }
-    
-    .project-details p {
-        margin-bottom: 1rem;
-        color: #555;
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--light-text);
+      font-size: 1.5rem;
+      cursor: pointer;
     }
-    
-    .project-tech {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-bottom: 1rem;
+
+    /* Main Content Styles */
+    main {
+      flex: 1;
+      padding: calc(var(--spacing-unit) * 2) 0;
     }
-    
-    .project-tech span {
-        font-size: 0.8rem;
-        background-color: rgba(52, 152, 219, 0.1);
-        color: var(--secondary-color);
-        padding: 0.2rem 0.5rem;
-        border-radius: 4px;
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-unit);
     }
-    
-    .project-link {
-        display: inline-block;
-        margin-top: 0.5rem;
-        font-weight: 600;
+
+    section {
+      margin-bottom: calc(var(--spacing-unit) * 2);
+      background-color: white;
+      border-radius: 8px;
+      padding: calc(var(--spacing-unit) * 2);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
-    
+
+    /* Lists */
+    ul {
+      padding-left: calc(var(--spacing-unit) * 1.5);
+      margin-bottom: var(--spacing-unit);
+    }
+
+    ul li {
+      margin-bottom: calc(var(--spacing-unit) * 0.5);
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: var(--dark-bg);
+      color: var(--light-text);
+      text-align: center;
+      padding: var(--spacing-unit);
+      margin-top: auto;
+    }
+
+    /* Responsive Styles */
     @media (max-width: 768px) {
-        .work-grid {
-            grid-template-columns: 1fr;
-        }
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        top: var(--spacing-unit);
+        right: var(--spacing-unit);
+      }
+
+      nav {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+      }
+
+      nav.active {
+        max-height: 300px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: var(--spacing-unit);
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav ul li a {
+        display: block;
+        padding: 0.5rem 0;
+      }
+
+      section {
+        padding: var(--spacing-unit);
+      }
     }
-</style>
+    
+    /* Specs & Equipment specific styles */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--spacing-unit);
+    }
+    
+    .specs-card {
+      background-color: rgba(52, 152, 219, 0.05);
+      border-radius: 8px;
+      padding: var(--spacing-unit);
+      border-left: 3px solid var(--secondary-color);
+    }
+    
+    /* Resume specific styles */
+    .skill-level {
+      display: inline-block;
+      height: 10px;
+      background-color: #e0e0e0;
+      border-radius: 5px;
+      overflow: hidden;
+      width: 100px;
+      margin-left: 10px;
+    }
+    
+    .skill-level div {
+      height: 100%;
+      background-color: var(--secondary-color);
+    }
+    
+    .beginner { width: 30%; }
+    .intermediate { width: 60%; }
+    .proficient { width: 85%; }
+    
+    /* Home page specific styles */
+    .welcome-section {
+      text-align: center;
+      padding: calc(var(--spacing-unit) * 3) var(--spacing-unit);
+    }
+    
+    .welcome-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: calc(var(--spacing-unit) * 1.5);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <h1 class="site-title"><a href="/">{{ site.title }}</a></h1>
+      <button class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav id="mainNav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/work/">My Work</a></li>
+          <li><a href="/socials/">Socials</a></li>
+          <li><a href="/specsandequipment/">PC Specs</a></li>
+          <li><a href="/resume/">Resume</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      &copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation toggle
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('mainNav').classList.toggle('active');
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const nav = document.getElementById('mainNav');
+      const toggle = document.getElementById('menuToggle');
+      
+      if (!nav.contains(event.target) && !toggle.contains(event.target) && nav.classList.contains('active')) {
+        nav.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
