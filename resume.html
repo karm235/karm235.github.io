@@ -359,19 +359,37 @@ permalink: /resume/
     .skills-container {
         display: flex;
         flex-direction: column;
-        gap: 2.5rem;
+        gap: 3rem;
     }
     
     .skill-category h3 {
         border-bottom: 2px solid var(--secondary-color);
         padding-bottom: 0.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .skill-category h4 {
+        margin-top: 3rem;
         margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+        color: var(--primary-color);
+    }
+    
+    /* Add a bit more space before the first h4 in each category */
+    .skill-category h3 + h4 {
+        margin-top: 2rem;
     }
     
     .skill-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 1rem;
+        margin-bottom: 3rem;
+    }
+    
+    /* Remove margin from the last grid in a section */
+    .skill-category > .skill-grid:last-of-type {
+        margin-bottom: 0;
     }
     
     .skill-card {
