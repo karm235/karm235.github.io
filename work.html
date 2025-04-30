@@ -10,10 +10,8 @@ permalink: /work/
     <div class="work-grid">
         <!-- Sample Project Card (Add your actual projects) -->
         <div class="project-card">
-            <div class="project-image">
-                <div class="placeholder-image">
-                    <i class="fas fa-code"></i>
-                </div>
+            <div class="project-image github-project">
+                <i class="fas fa-globe"></i>
             </div>
             <div class="project-details">
                 <span class="project-tag">Web Development</span>
@@ -107,16 +105,18 @@ permalink: /work/
         transform: scale(1.05);
     }
     
-    .placeholder-image {
+    .placeholder-image, .github-project {
         background-color: var(--secondary-color);
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
-        height: 100%;
     }
     
-    .placeholder-image i {
+    .github-project {
+        background-color: #3498db;
+    }
+    
+    .placeholder-image i, .github-project i {
         font-size: 4rem;
         color: rgba(255, 255, 255, 0.8);
     }
